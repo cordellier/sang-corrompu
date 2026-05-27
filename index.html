@@ -1087,6 +1087,180 @@ h1 .gl::after, h2 .gl::after, h3 .gl::after,
 .p3ip-prec-label{font-size:8.5px;font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:.12em;color:var(--ind-l);margin-bottom:5px}
 .p3ip-prec-text{font-size:12px;color:var(--cnd);line-height:1.6}
 
+
+/* ─ BOOK SHARE URL ─ */
+.book-share{margin-bottom:16px;background:rgba(60,52,137,.08);border:1px solid rgba(60,52,137,.2);border-radius:5px;padding:11px 14px}
+.book-share-label{font-size:9px;font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:.12em;color:var(--ind-l);margin-bottom:6px}
+.book-share-url{font-size:12px;font-family:'DM Mono',monospace;color:var(--pch);text-decoration:none;cursor:pointer;display:block;transition:.15s;word-break:break-all}
+.book-share-url:hover{color:var(--ind-l)}
+
+
+/* ══════════════════════════════════════
+   RESPONSIVE MOBILE · < 768px
+   ══════════════════════════════════════ */
+
+/* ─ HAMBURGER BUTTON ─ */
+#sb-toggle{
+  display:none;
+  position:fixed;
+  top:12px;left:12px;
+  z-index:400;
+  width:42px;height:42px;
+  border-radius:8px;
+  background:rgba(8,8,8,.92);
+  border:1px solid rgba(255,255,255,.1);
+  backdrop-filter:blur(12px);
+  cursor:pointer;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  padding:10px;
+  box-shadow:0 2px 12px rgba(0,0,0,.5);
+}
+#sb-toggle span{
+  display:block;width:20px;height:2px;
+  background:var(--pch);border-radius:2px;
+  transition:all .22s ease;
+}
+#sb-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+#sb-toggle.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+#sb-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ─ OVERLAY ─ */
+#sb-overlay{
+  display:none;
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.6);
+  backdrop-filter:blur(2px);
+  z-index:190;
+}
+#sb-overlay.visible{display:block}
+
+/* ─ BREAKPOINT MOBILE ─ */
+@media (max-width: 768px) {
+
+  /* Sidebar devient tiroir */
+  #sb-toggle{display:flex}
+
+  #sb{
+    transform:translateX(-100%);
+    transition:transform .28s cubic-bezier(.25,.46,.45,.94);
+    z-index:300;
+    width:280px!important;
+    box-shadow:none;
+  }
+  #sb.open{
+    transform:translateX(0);
+    box-shadow:4px 0 40px rgba(0,0,0,.7);
+  }
+
+  /* Main pleine largeur */
+  #main{margin-left:0!important}
+  #pgbar{left:0!important}
+
+  /* Hero */
+  .hero{padding:56px 24px 40px!important}
+  .hero h1{font-size:38px!important;line-height:1.08!important}
+  .hero .hl{font-size:16px!important}
+  .hero-stats{flex-wrap:wrap;gap:0}
+  .hs{padding:14px 18px!important;min-width:140px}
+  .hs-v{font-size:26px!important}
+
+  /* Content */
+  .ct{padding:32px 20px 48px!important}
+
+  /* Grilles → 1 colonne */
+  .gc.g2,.gc.g3,.gc.g4{grid-template-columns:1fr!important}
+
+  /* Piliers */
+  .pillar{padding:18px 18px!important}
+  .ptitle{font-size:17px!important}
+  .pbody{font-size:14px!important}
+
+  /* Tables → scroll horizontal */
+  table{display:block;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+
+  /* P3 layout → 1 colonne */
+  .p3-layout{grid-template-columns:1fr!important;padding-right:0!important}
+  .p3-diagram{max-width:100%!important}
+
+  /* Info panel p3 → bottom sheet */
+  #p3InfoPanel{
+    position:fixed!important;
+    right:0!important;left:0!important;
+    top:auto!important;bottom:-100%!important;
+    transform:none!important;
+    width:100%!important;
+    border-radius:16px 16px 0 0!important;
+    max-height:65vh;
+    overflow-y:auto;
+    transition:bottom .3s cubic-bezier(.25,.46,.45,.94)!important;
+  }
+  #p3InfoPanel.open{
+    bottom:0!important;
+    opacity:1!important;
+    transform:none!important;
+  }
+
+  /* Video overlay */
+  #vmodal{width:94vw!important}
+
+  /* Sidebar donate */
+  .sb-donate{padding:12px 16px 10px}
+
+  /* Book layout → 1 colonne */
+  .book-layout{grid-template-columns:1fr!important;gap:24px}
+  .book-cover-wrap{position:static!important}
+
+  /* FDS flow → réduit */
+  .fds{padding:16px 18px!important}
+  .fds-step-title{font-size:17px!important}
+
+  /* Var/ADE blocks */
+  .var-header{flex-wrap:wrap;gap:10px}
+  .var-urgence{margin-left:0!important}
+
+  /* KPI row */
+  .krow{flex-wrap:wrap}
+  .kc{min-width:calc(50% - 6px)}
+
+  /* Quote */
+  .qt p{font-size:18px!important}
+
+  /* Dims → 1 col */
+  .dims-grid{grid-template-columns:1fr!important}
+
+  /* Exec summary */
+  .exec-grid{grid-template-columns:1fr 1fr!important}
+  .exec-flow{flex-wrap:wrap}
+  .ef-step{min-width:140px}
+
+  /* Padding top pour éviter le hamburger */
+  .pg.on .hero{padding-top:70px!important}
+
+  /* Scénarios */
+  .scens-grid{grid-template-columns:1fr!important}
+
+  /* Comparatif table header */
+  th{font-size:9px!important;padding:8px 10px!important}
+  td{padding:9px 10px!important;font-size:13px!important}
+
+  /* Sources */
+  .src-item{padding:14px 16px!important}
+}
+
+/* ─ BREAKPOINT TABLETTE ─ */
+@media (max-width:1024px) and (min-width:769px) {
+  #sb{width:220px!important}
+  #main{margin-left:220px!important}
+  #pgbar{left:220px!important}
+  .gc.g3{grid-template-columns:1fr 1fr!important}
+  .gc.g4{grid-template-columns:1fr 1fr!important}
+  .hero{padding:56px 40px 48px!important}
+  .ct{padding:40px 40px 56px!important}
+}
+
 </style>
 </head>
 <body>
@@ -1112,6 +1286,10 @@ h1 .gl::after, h2 .gl::after, h3 .gl::after,
 <div id="gl-singleton"><span class="gs-term"></span><span class="gs-def"></span></div>
 <div id="pgbar"></div>
 
+<button id="sb-toggle" onclick="toggleSidebar()" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
+<div id="sb-overlay" onclick="closeSidebar()"></div>
 <nav id="sb">
   <!-- BOOK HEADER — au-dessus de tout -->
   <div class="sb-book-btn" onclick="go('pbook')">
@@ -1307,6 +1485,12 @@ h1 .gl::after, h2 .gl::after, h3 .gl::after,
         </div>
 
         <!-- LINKS -->
+        <div class="book-share">
+          <div class="book-share-label">Document interactif en ligne</div>
+          <a href="https://cordellier.github.io/sang-corrompu/" class="book-share-url" onclick="event.preventDefault();navigator.clipboard.writeText('https://cordellier.github.io/sang-corrompu/');this.textContent='✓ Copié !';setTimeout(()=>this.textContent='https://cordellier.github.io/sang-corrompu/',2000)">
+            https://cordellier.github.io/sang-corrompu/
+          </a>
+        </div>
         <div class="book-links">
           <a href="https://amazon.fr" target="_blank" class="book-btn book-btn-main">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM5.5 6h14.5l-1.5 7H7L5.5 6zm-2-4H1v2h2l3.6 7.6L5.2 14c-.1.3-.2.6-.2.9C5 16.1 6 17 7 17h13v-2H7.4c-.1 0-.2-.1-.2-.2l.1-.3.9-1.5H18c.7 0 1.4-.4 1.7-1l3.5-6.4c.4-.6 0-1.4-.7-1.6H5.2L4.3 2H3.5z"/></svg>
@@ -3291,6 +3475,37 @@ function closeP3Info() {
 document.addEventListener('keydown', e => {
   if(e.key === 'Escape') closeP3Info();
 });
+
+
+// ─ SIDEBAR MOBILE TOGGLE ─
+function toggleSidebar() {
+  const sb = document.getElementById('sb');
+  const btn = document.getElementById('sb-toggle');
+  const overlay = document.getElementById('sb-overlay');
+  const isOpen = sb.classList.contains('open');
+  if(isOpen) {
+    closeSidebar();
+  } else {
+    sb.classList.add('open');
+    btn.classList.add('open');
+    overlay.classList.add('visible');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeSidebar() {
+  document.getElementById('sb').classList.remove('open');
+  document.getElementById('sb-toggle').classList.remove('open');
+  document.getElementById('sb-overlay').classList.remove('visible');
+  document.body.style.overflow = '';
+}
+
+// Close sidebar when navigating on mobile
+const _origGo2 = window.go;
+window.go = function(id) {
+  _origGo2(id);
+  if(window.innerWidth <= 768) closeSidebar();
+};
 
 </script>
 </body>
