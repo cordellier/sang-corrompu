@@ -882,8 +882,8 @@ h2 .vbadge svg{width:10px;height:10px}
 
 .book-links{display:flex;gap:10px;flex-wrap:wrap}
 .book-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:5px;font-size:12.5px;font-family:'DM Mono',monospace;text-decoration:none;text-transform:uppercase;letter-spacing:.08em;transition:.15s;cursor:pointer;border:1px solid}
-.book-btn-main{background:rgba(201,168,76,.1);border-color:rgba(201,168,76,.4);color:var(--amb)}
-.book-btn-main:hover{background:rgba(201,168,76,.2);border-color:rgba(201,168,76,.7)}
+.book-btn-tipeee{background:rgba(252,172,0,.08);border-color:rgba(252,172,0,.3);color:#f5a800}
+.book-btn-tipeee:hover{background:rgba(252,172,0,.18);border-color:rgba(252,172,0,.55)}
 .book-btn-yt{background:rgba(255,0,0,.08);border-color:rgba(255,0,0,.3);color:#ff4444}
 .book-btn-yt:hover{background:rgba(255,0,0,.15);border-color:rgba(255,0,0,.5)}
 
@@ -1027,12 +1027,10 @@ h1 .gl::after, h2 .gl::after, h3 .gl::after,
 .sb-donate-title{font-size:8.5px;font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:.16em;color:rgba(136,135,128,.45);margin-bottom:10px}
 .sb-donate-btns{display:flex;gap:6px;flex-direction:column}
 .sd-btn{display:flex;align-items:center;gap:8px;padding:7px 11px;border-radius:5px;font-size:11px;font-family:'DM Sans',sans-serif;font-weight:500;text-decoration:none;transition:.15s;border:1px solid}
-.sd-patreon{background:rgba(255,102,0,.08);border-color:rgba(255,102,0,.25);color:#ff9555}
-.sd-patreon:hover{background:rgba(255,102,0,.18);border-color:rgba(255,102,0,.5)}
+.sd-tipeee{background:rgba(252,172,0,.08);border-color:rgba(252,172,0,.3);color:#f5a800}
+.sd-tipeee:hover{background:rgba(252,172,0,.18);border-color:rgba(252,172,0,.55)}
 .sd-yt{background:rgba(255,0,0,.08);border-color:rgba(255,0,0,.22);color:#ff5555}
 .sd-yt:hover{background:rgba(255,0,0,.16);border-color:rgba(255,0,0,.45)}
-.sd-paypal{background:rgba(0,112,186,.1);border-color:rgba(0,112,186,.3);color:#5baddf}
-.sd-paypal:hover{background:rgba(0,112,186,.2);border-color:rgba(0,112,186,.55)}
 
 
 /* ─ PAGE 03 · LAYOUT INTERACTIF ─ */
@@ -1261,6 +1259,277 @@ h1 .gl::after, h2 .gl::after, h3 .gl::after,
   .ct{padding:40px 40px 56px!important}
 }
 
+
+
+
+/* MOBILE V2 REMOVED */
+
+@media (max-width: 768px) {
+
+  /* ── 1. "La solution en 1 flux" exec-flow ──
+     Grille 5 col (steps + flèches) → colonne */
+  .exec-flow {
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:stretch !important;
+    gap:4px !important;
+  }
+  .ef-step {
+    width:100% !important;
+    min-width:unset !important;
+    padding:14px 16px !important;
+  }
+  .ef-arrow {
+    text-align:center !important;
+    transform:rotate(90deg) !important;
+    display:block !important;
+    font-size:18px !important;
+    color:var(--cnd2) !important;
+    line-height:1 !important;
+    margin:0 auto !important;
+  }
+
+  /* ── 2. Step 03 Cohérence — fds-outputs deux colonnes ──
+     Grid 260px 1fr → colonne */
+  .fds-outputs {
+    grid-template-columns:1fr !important;
+    gap:14px !important;
+  }
+  .fdo-main {
+    width:100% !important;
+  }
+  .fdo-big {
+    font-size:24px !important;
+  }
+
+  /* ── 3. fds-rep (étape 02 fonds) ──
+     Grid 1fr 44px 1fr → colonne */
+  .fds-rep {
+    grid-template-columns:1fr !important;
+    gap:12px !important;
+  }
+  .fds-rep-sep {
+    display:none !important;
+  }
+
+  /* ── 4. Hero stats — grille 2×2 ── */
+  .hero-stats {
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+    flex-wrap:unset !important;
+    gap:0 !important;
+  }
+  .hs {
+    padding:12px 14px !important;
+    min-width:unset !important;
+  }
+  .hs-v {
+    font-size:24px !important;
+  }
+  .hs-l {
+    font-size:8px !important;
+  }
+
+  /* ── 5. Tables — scroll + badge inline ── */
+  .cbox table,
+  .var-meca table,
+  .ade-table,
+  table {
+    display:block !important;
+    overflow-x:auto !important;
+    -webkit-overflow-scrolling:touch !important;
+    max-width:100% !important;
+  }
+  th { font-size:9px !important; padding:7px 8px !important; white-space:nowrap !important; }
+  td { font-size:12px !important; padding:7px 8px !important; }
+
+  /* Badge dans table — ne pas casser le layout */
+  td .vbadge, th .vbadge {
+    position:relative !important;
+    top:auto !important; right:auto !important;
+    display:inline-flex !important;
+    width:18px !important; height:18px !important;
+    vertical-align:middle !important;
+    margin-right:4px !important;
+    flex-shrink:0 !important;
+  }
+
+  /* ── 6. Grilles générales → 1 col ── */
+  .gc.g2, .gc.g3, .gc.g4 {
+    grid-template-columns:1fr !important;
+  }
+
+  /* ── 7. Content padding ── */
+  .ct { padding:28px 16px 48px !important; }
+  .hero { padding:64px 18px 36px !important; }
+  .hero h1 { font-size:36px !important; line-height:1.1 !important; }
+  .hero .hl { font-size:15px !important; }
+
+  /* ── 8. Sidebar mobile ── */
+  #sb { transform:translateX(-100%) !important; transition:transform .28s ease !important; }
+  #sb.open { transform:translateX(0) !important; }
+  #main { margin-left:0 !important; }
+  #pgbar { left:0 !important; }
+
+  /* ── 9. Var blocks ── */
+  .var-header { flex-wrap:wrap !important; gap:8px !important; }
+  .var-urgence { margin-left:0 !important; }
+  .var-body p { font-size:14px !important; }
+
+  /* ── 10. KPI row ── */
+  .krow { flex-wrap:wrap !important; }
+  .kc { min-width:calc(50% - 6px) !important; }
+
+  /* ── 11. Piliers ── */
+  .pillar { padding:16px !important; }
+  .ptitle { font-size:16px !important; }
+  .pbody { font-size:13.5px !important; }
+
+  /* ── 12. Dimensions sociétales ── */
+  .dims-grid,
+  .gc[style*="g3"], .gc[style*="g2"] {
+    grid-template-columns:1fr !important;
+  }
+
+  /* ── 13. Book page ── */
+  .book-layout { grid-template-columns:1fr !important; gap:20px !important; }
+  .book-cover-wrap { position:static !important; }
+  .book-cover { width:130px !important; height:178px !important; }
+
+  /* ── 14. Scénarios ── */
+  .scen { padding:16px !important; }
+
+  /* ── 15. p3 Info panel → bottom sheet ── */
+  #p3InfoPanel {
+    position:fixed !important;
+    right:0 !important; left:0 !important;
+    top:auto !important;
+    bottom:-100% !important;
+    transform:none !important;
+    width:100% !important;
+    max-height:70vh !important;
+    overflow-y:auto !important;
+    border-radius:16px 16px 0 0 !important;
+    transition:bottom .3s ease !important;
+    opacity:1 !important;
+  }
+  #p3InfoPanel.open {
+    bottom:0 !important;
+    transform:none !important;
+  }
+
+  /* ── 16. Video modal ── */
+  #vmodal { width:96vw !important; }
+
+  /* ── 17. Padding top pour hamburger ── */
+  .pg.on > .hero { padding-top:68px !important; }
+
+  /* ── 18. Tooltip ── */
+  #gl-singleton {
+    width:min(260px, calc(100vw - 32px)) !important;
+  }
+}
+
+/* ── Tablette 769–1024px ── */
+@media (min-width:769px) and (max-width:1024px) {
+  #sb { width:220px !important; }
+  #main { margin-left:220px !important; }
+  #pgbar { left:220px !important; }
+  .gc.g3 { grid-template-columns:1fr 1fr !important; }
+  .gc.g4 { grid-template-columns:1fr 1fr !important; }
+  .ct { padding:40px 36px 56px !important; }
+}
+
+
+/* ══ MOBILE FIXES V3 · Ciblés précisément ══ */
+
+@media (max-width: 768px) {
+
+  /* ── Badge vidéo dans h1 → inline, colle au titre ── */
+  h1 .vbadge {
+    position:relative !important;
+    display:inline-flex !important;
+    top:auto !important;
+    right:auto !important;
+    vertical-align:middle !important;
+    margin-left:10px !important;
+    width:28px !important;
+    height:28px !important;
+    flex-shrink:0 !important;
+  }
+  h1 .vbadge svg { width:11px !important; height:11px !important; }
+
+  /* ── Badge dans h2 → inline au lieu d'absolu ── */
+  h2 .vbadge {
+    position:relative !important;
+    top:auto !important; right:auto !important;
+    display:inline-flex !important;
+    vertical-align:middle !important;
+    margin-left:8px !important;
+    width:24px !important; height:24px !important;
+  }
+
+  /* ── .g3c params (3 colonnes → 1 colonne) ── */
+  .g3c {
+    grid-template-columns:1fr !important;
+    gap:0 !important;
+  }
+
+  /* ── Grilles inline 1fr 1fr (charts) → 1 colonne ──
+     Ciblage via classe parente */
+  .ct [style*="grid-template-columns:1fr 1fr"],
+  .ct [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns:1fr !important;
+  }
+  .ct [style*="grid-template-columns:repeat(3"] {
+    grid-template-columns:1fr !important;
+  }
+
+  /* ── krow repeat(5,1fr) → 2 colonnes + scroll ── */
+  .krow {
+    grid-template-columns:repeat(2, 1fr) !important;
+    gap:8px !important;
+  }
+
+  /* ── Charts pleine largeur ── */
+  .cbox { width:100% !important; }
+  .cw { height:180px !important; }
+
+  /* ── Input range pleine largeur ── */
+  .cr {
+    flex-wrap:wrap !important;
+    gap:6px !important;
+  }
+  .cr input[type=range] {
+    width:100% !important;
+    min-width:unset !important;
+  }
+  .cv- { min-width:40px !important; }
+
+  /* ── KPI card 5ème → pleine largeur ── */
+  .krow .kc:last-child:nth-child(odd) {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .charts-row {
+    grid-template-columns:1fr !important;
+    gap:12px !important;
+  }
+}
+
+
+/* ─ Badges orphelins dans .ct → ne pas flotter ─ */
+.ct > .vbadge {
+  position:relative !important;
+  display:inline-flex !important;
+  margin:0 0 12px 0 !important;
+  top:auto !important;
+  right:auto !important;
+}
+
 </style>
 </head>
 <body>
@@ -1395,17 +1664,13 @@ h1 .gl::after, h2 .gl::after, h3 .gl::after,
   <div class="sb-donate">
     <div class="sb-donate-title">Soutenir le projet</div>
     <div class="sb-donate-btns">
-      <a href="https://www.patreon.com/SangCorrompu" target="_blank" class="sd-btn sd-patreon">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14.82 2.41C18.78 2.41 22 5.65 22 9.62c0 3.96-3.22 7.19-7.18 7.19-3.95 0-7.17-3.23-7.17-7.19 0-3.97 3.22-7.21 7.17-7.21M2 21.6h3.5V2.41H2V21.6z"/></svg>
-        Patreon
+      <a href="https://fr.tipeee.com/le-sang-corrompu/" target="_blank" class="sd-btn sd-tipeee">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 21.593c-.425-.396-8.996-8.361-8.996-13.097C3.004 4.428 5.418 2 8.5 2c1.813 0 3.412.888 4.5 2.254C14.088 2.888 15.687 2 17.5 2c3.082 0 5.496 2.428 5.496 6.496 0 4.736-8.571 12.701-8.996 13.097l-1 .93-1-.93z"/></svg>
+        Soutenir sur Tipeee
       </a>
       <a href="https://www.youtube.com/@SangCorrompu" target="_blank" class="sd-btn sd-yt">
         <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
-        S'abonner YouTube
-      </a>
-      <a href="https://paypal.me/SangCorrompu" target="_blank" class="sd-btn sd-paypal">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7.02 21.94L7.5 19H5.5l1.5-9h4.75c1.58 0 2.75.37 3.44 1.08.67.69.88 1.65.62 2.84-.55 2.65-2.33 3.97-5.27 3.97H9.1l-.46 2.84-.12.72-.15.9-.04.24-.76.35zM20.08 5.09c-.68-1.02-2.01-1.53-3.95-1.53H10.7c-.52 0-.96.38-1.04.89l-2.3 14.54a.638.638 0 0 0 .63.74h3.24l-.48 3.07a.557.557 0 0 0 .55.65h2.75c.46 0 .85-.33.92-.78l.04-.2.73-4.63.05-.26c.07-.45.46-.78.92-.78h.58c3.74 0 6.67-1.52 7.53-5.9.36-1.85.17-3.39-.74-4.81z"/></svg>
-        Don direct · PayPal
+        S'abonner · YouTube
       </a>
     </div>
   </div>
@@ -1674,8 +1939,7 @@ h1 .gl::after, h2 .gl::after, h3 .gl::after,
     <p>Quand de la nouvelle monnaie est créée, les <strong>premiers à la recevoir bénéficient de son plein pouvoir d'achat</strong> avant que les prix n'ajustent. Les derniers · salariés, petits épargnants · paient les prix montés sans avoir reçu la monnaie nouvelle. Richard Cantillon l'a décrit en 1730. Le QE de la BCE l'a reproduit à l'échelle de 3 000 milliards.</p>
     <div class="gc g3"><div class="cd rl reveal"><div class="cl-">QE BCE 2015–2022</div><div class="cv">3 000 Md€</div><div class="cs">Injectés sur les marchés financiers en premier. Total BCE incluant PEPP : ~5 000 Md€.</div></div><div class="cd rl reveal"><div class="cl-">Actifs financiers</div><div class="cv">+200%</div><div class="cs">Pendant la même période.</div></div><div class="cd rl reveal"><div class="cl-">Salaires réels</div><div class="cv">+8%</div><div class="cs">Pendant la même période.</div></div></div>
     <hr>
-    <h2>Mécanisme 2 · Création monétaire privée</h2>
-    <div class="vbadge soon" onclick="openVid('v-creation-monetaire')" title="La création monétaire privée"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    <h2 style="position:relative">Mécanisme 2 · Création monétaire privée<div class="vbadge soon" onclick="openVid('v-creation-monetaire')" title="La création monétaire privée"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></h2>
     <p><strong>97% de la monnaie est créée par les banques commerciales</strong> via le crédit, pas par la Banque Centrale. Documenté par la Bank of England en 2014. La masse monétaire croît quand on emprunte, et se concentre vers ceux qui peuvent emprunter le plus et le moins cher.</p>
     <hr>
     <h2>Mécanisme 3 · La rente immobilière</h2>
@@ -1956,7 +2220,7 @@ h1 .gl::after, h2 .gl::after, h3 .gl::after,
     </div>
     <div class="krow" id="kpat"></div>
     <div class="cbox"><div class="ctitle">Patrimoine net</div><div class="cw" style="height:255px"><canvas id="cPat"></canvas></div></div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:11px">
+    <div class="charts-row" style="display:grid;grid-template-columns:1fr 1fr;gap:11px">
       <div class="cbox"><div class="ctitle">Gini · évolution de l'inégalité</div><div class="cw" style="height:195px"><canvas id="cPG"></canvas></div></div>
       <div class="cbox"><div class="ctitle">Ratio rentes / salaires</div><div class="cw" style="height:195px"><canvas id="cPR"></canvas></div></div>
     </div>
@@ -1992,11 +2256,11 @@ h1 .gl::after, h2 .gl::after, h3 .gl::after,
       <button class="btn" id="bgM" onclick="setG('m')">Avec le modèle</button>
     </div>
     <div class="krow" id="kgrow"></div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:11px">
+    <div class="charts-row" style="display:grid;grid-template-columns:1fr 1fr;gap:11px">
       <div class="cbox"><div class="ctitle">PIB · 20 ans (Md€)</div><div class="cw" style="height:210px"><canvas id="cGDP"></canvas></div></div>
       <div class="cbox"><div class="ctitle">Taux de chômage</div><div class="cw" style="height:210px"><canvas id="cChom"></canvas></div></div>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:11px">
+    <div class="charts-row" style="display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:11px">
       <div class="cbox"><div class="ctitle">Emplois créés (millions cumulés)</div><div class="cw" style="height:190px"><canvas id="cJobs"></canvas></div></div>
       <div class="cbox"><div class="ctitle">Érosion contra-cyclique automatique</div><div class="cw" style="height:190px"><canvas id="cCyc"></canvas></div></div>
     </div>
@@ -3358,7 +3622,7 @@ function openVid(videoId) {
         <div class="vm-soon-icon">🎬</div>
         <div class="vm-soon-title">Vidéo à venir</div>
         <div class="vm-soon-sub">\${v.desc}</div>
-        <a href="${CHANNEL_URL}" target="_blank" class="vm-soon-btn">
+        <a href="https://www.youtube.com/@SangCorrompu" target="_blank" class="vm-soon-btn">
           <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
           S'abonner à la chaîne
         </a>
