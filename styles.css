@@ -764,8 +764,18 @@ h2 {
   gap: clamp(45px, 9vw, 120px);
   align-items: center;
 }
+.final-book {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+}
 .final-book img {
+  display: block;
   width: min(100%, 520px);
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
   margin-inline: auto;
   filter: drop-shadow(0 35px 45px rgba(0,0,0,.7));
 }
@@ -786,7 +796,6 @@ h2 {
   margin-top: 34px;
 }
 .btn-large { min-height: 60px; padding-inline: 26px; }
-.final-note { color: var(--muted-2); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
 
 .site-footer {
   padding: 36px 0;
@@ -890,7 +899,7 @@ h2 {
   .author-visual { min-height: 430px; }
   .reviews-copy { grid-template-columns: 1fr; gap: 16px; }
   .review-placeholders { grid-template-columns: 1fr; }
-  .final-book img { max-width: 520px; }
+  .final-book img { width: min(100%, 460px); }
   .footer-grid { grid-template-columns: 1fr; text-align: center; }
   .footer-links { justify-content: center; }
 }
@@ -926,9 +935,9 @@ h2 {
   .author-visual { min-height: 350px; }
   .reviews-shell { padding: 28px; }
   .review-placeholder { min-height: 180px; }
+  .final-book img { width: min(100%, 390px); }
   .final-actions { align-items: stretch; flex-direction: column; }
   .final-actions .btn { width: 100%; }
-  .final-note { text-align: center; }
 
   .mobile-buy {
     position: fixed;

@@ -46,3 +46,8 @@ La page utilise uniquement HTML, CSS et JavaScript natifs. Vous pouvez :
 - sur WordPress, la transposer dans un template enfant ou un bloc HTML personnalisé.
 
 Aucune bibliothèque JavaScript externe n’est requise.
+
+
+## Lien Amazon
+
+Les boutons pointent vers : https://www.amazon.fr/dp/B0HHG4HTGM
